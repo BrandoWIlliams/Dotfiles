@@ -13,7 +13,10 @@ M.override = {
 
 ---@type HLTable
 M.add = {
-  NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  NvimTreeOpenedFolderName = { bg = "cyan" },
+  NvimTreeOpenedFile = { fg = "green", bold = true },
+  NvimTreeOpenedFolderIcon = { fg = "green" },
+  NvimTreeFileDirty = { fg = "nord_blue" },
 }
 
 return M

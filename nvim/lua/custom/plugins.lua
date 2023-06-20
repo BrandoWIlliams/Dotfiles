@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -9,62 +9,67 @@ local plugins = {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
-      config = function ()
+      config = function()
         require "custom.configs.null-ls"
       end,
     },
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
-   end,
+    end,
   },
   {
-    "hrsh7th/nvim-cmp"
+    "hrsh7th/nvim-cmp",
   },
   {
-    "xiyaowong/transparent.nvim"
+    "ludovicchabant/vim-gutentags",
   },
   {
-    "glepnir/lspsaga.nvim"
+    "xiyaowong/transparent.nvim",
   },
   {
-    "MunifTanjim/prettier.nvim"
+    "glepnir/lspsaga.nvim",
   },
   {
-    "nvim-telescope/telescope-live-grep-args.nvim"
+    "MunifTanjim/prettier.nvim",
   },
   {
-    "folke/trouble.nvim"
+    "nvim-telescope/telescope-live-grep-args.nvim",
+  },
+  {
+    "folke/trouble.nvim",
   },
   {
     "williamboman/mason-lspconfig.nvim",
   },
   {
-    "windwp/nvim-autopairs"
+    "windwp/nvim-autopairs",
   },
   {
-    "windwp/nvim-ts-autotag"
+    "windwp/nvim-ts-autotag",
   },
   {
-    "iamcco/markdown-preview.nvim"
+    "iamcco/markdown-preview.nvim",
   },
   {
-    "prettier/vim-prettier"
+    "prettier/vim-prettier",
   },
   {
-    "github/copilot.vim"
+    "github/copilot.vim",
   },
   {
     "williamboman/mason.nvim",
   },
   {
-    "kabouzeid/nvim-lspinstall"
+    "kabouzeid/nvim-lspinstall",
   },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
-
+  {
+    "numToStr/Comment.nvim",
+  },
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,

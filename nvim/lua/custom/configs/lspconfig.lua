@@ -13,12 +13,11 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
+--
 -- lspconfig.pyright.setup { blabla}
-lspconfig.tailwindcss.setup{
+lspconfig.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-
 }
 
 lspconfig.tsserver.setup {
@@ -36,7 +35,32 @@ lspconfig.cssls.setup {
   capabilities = capabilities,
 }
 
-lspconfig.svelte.setup{
+lspconfig.svelte.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+lspconfig.volar.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+-- setup diagnostics
+-- vim.diagnostic.config { virtual_text = false }
+-- vim.api.nvim_create_autocmd({ "CursorHold" }, {
+--   callback = function()
+--     if vim.lsp.buf.server_ready() then
+--       vim.diagnostic.open_float()
+--     end
+--   end,
+-- })
+
+-- set up LSP signs
+for type, icon in pairs {
+  Error = "",
+  Warn = "",
+  Hint = "",
+  Info = "",
+} do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end

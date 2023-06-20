@@ -5,13 +5,6 @@ local M = {}
 local highlights = require "custom.highlights"
 
 -- Make background transparent (remove if want normal)
-function ColorMyPencils()
-  vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-  vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
-  vim.cmd[[hi NvimTreeNormal guibg=NONE]]
-  vim.cmd[[hi NvimTreeWinSeparator guibg=NONE]]
-end
-ColorMyPencils()
 
 M.ui = {
   theme = "kanagawa",
