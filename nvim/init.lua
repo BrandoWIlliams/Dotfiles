@@ -48,10 +48,11 @@ require("transparent").setup {
     "EndOfBuffer",
   },
   extra_groups = {
-    "NormalFloat",
     "NvimTreeNormal",
   }, -- table: additional groups that should be cleared
-  exclude_groups = {}, -- table: groups you don't want to clear
+  exclude_groups = {
+    "NormalFloat",
+  }, -- table: groups you don't want to clear
 }
 
 vim.wo.relativenumber = true

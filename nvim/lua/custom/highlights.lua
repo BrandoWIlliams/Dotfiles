@@ -9,6 +9,16 @@ M.override = {
   Comment = {
     italic = true,
   },
+  TblineFill = { bg = "NONE" },
+  TbLineBufOn = { bg = "NONE", fg = "white" },
+  TbLineBufOff = { bg = "NONE" },
+  TbLineThemeToggleBtn = { bg = "NONE" },
+  TbLineBufOffClose = { bg = "NONE" },
+  TbLineBufOnClose = { bg = "NONE" },
+  TbLineBufOnModified = { bg = "NONE" },
+  TbBufLineBufOffModified = { bg = "NONE" },
+  NormalFloat = { bg = "NONE" },
+  FloatBorder = { bg = "NONE", fg = "red" },
 }
 
 ---@type HLTable

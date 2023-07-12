@@ -4,7 +4,19 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
 
   -- Override plugin definition options
-
+  {
+    "Wansmer/treesj",
+    keys = { "<space>m", "<space>j", "<space>s" },
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("treesj").setup {--[[ your config ]]
+      }
+    end,
+  },
+  {
+    "f-person/git-blame.nvim",
+    event = "VeryLazy",
+  },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -17,6 +29,33 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = overrides.copilot,
+  },
+
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      },
+    },
+    opts = {
+      sources = {
+        { name = "nvim_lsp", group_index = 2 },
+        { name = "copilot", group_index = 2 },
+        { name = "luasnip", group_index = 2 },
+        { name = "buffer", group_index = 2 },
+        { name = "nvim_lua", group_index = 2 },
+        { name = "path", group_index = 2 },
+      },
+    },
   },
   {
     "hrsh7th/nvim-cmp",
@@ -53,9 +92,6 @@ local plugins = {
   },
   {
     "prettier/vim-prettier",
-  },
-  {
-    "github/copilot.vim",
   },
   {
     "williamboman/mason.nvim",

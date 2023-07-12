@@ -19,6 +19,38 @@ lspconfig.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true,
+      },
+    },
+  },
+}
+
+lspconfig.kotlin_language_server.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+lspconfig.java_language_server.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
 
 lspconfig.tsserver.setup {
   on_attach = on_attach,

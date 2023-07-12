@@ -6,4 +6,3 @@
 --   command = "tabdo wincmd =",
 -- })
 --
-
